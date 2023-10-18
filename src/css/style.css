@@ -1,0 +1,274 @@
+@import url(https://db.onlinewebfonts.com/c/55d433372d270829c51e2577a78ef12d?family=Monument+Extended);
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+    --padding-section-mobile: 0 7rem;
+    --padding-section-desktop: 0 30rem;
+}
+
+*, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    text-decoration: none;
+    position: relative;
+}
+
+main {
+    background-image:url(/src/assets/333.png);
+    background-position: center 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main {
+    overflow: hidden;
+}
+
+
+.overlay-nav {
+    backdrop-filter: blur(10px);
+    display: none;
+    z-index: 998;
+    height: 100%;
+    width: 100vw;
+    transition: all 3s ease;
+}
+
+.overlay-nav img {
+    width: 10%;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.overlay-open {
+    display: block;
+}
+
+.menu-btn {
+    z-index: 999;
+    display: none;
+}
+
+.menu-btn span {
+    font-size: 3rem;
+    color: #8358FF !important;
+    filter: drop-shadow(0 1px 1px rgb(0, 0, 0, 0.4));
+}
+
+.menu {
+    color: #ffffff;
+    width: 100%;
+    font-size: 3rem;
+    z-index: 999;
+    font-family: "Monument Extended";
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    height: 10px;
+    opacity: 0;
+    overflow: hidden;
+    transition: all .5s ease;
+    background-image: linear-gradient(to bottom, #0e1111 30%, rgb(14, 17, 17, 0.5), transparent);
+}
+
+.menu-opened {
+    height: auto;
+    opacity: 1;
+}
+
+.nav-item, .menu-btn {
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+
+
+.menu:has(.nav-item:hover) .nav-item:not(:hover) {
+    opacity: .7;
+    filter: blur(1px);
+}
+
+.menu:has(.nav-item:hover) .nav-item:has(:hover) {
+    letter-spacing: .3rem;
+    text-shadow: 0 0 2px #8358FF,
+              0 0 5px #8358FF,
+              0 0 7px #8358FF;
+
+}
+
+
+.home {
+    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    align-content: center;
+}
+
+.home img {
+    width: 30rem;
+}
+
+.home h3, b {
+    color: #ffffff;
+    font-size: 2rem;
+    font-family: "Monument Extended";
+    text-align: center;
+    letter-spacing: .5rem;
+}
+
+.why, .home {
+    height: 75vh;
+}
+.why {
+    margin-top: 5rem;
+}
+.why p {
+    margin-top: 5rem;
+    padding: var(--padding-section-mobile);
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    font-family: 'Open Sans', sans-serif;
+}
+.why h1 {
+    padding: var(--padding-section-mobile);
+    font-size: 2rem;
+    letter-spacing: 0.6rem;
+    font-family: "Monument Extended";
+}
+
+.why img {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.gallery {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 5rem 0;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.gallery .images {
+    column-count: 1;
+}
+
+.gallery .images img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    transition: scale .4s ease, opacity .3s linear;
+} 
+
+.images:has(img:hover) img:not(:hover) {
+    scale: .9;
+    opacity: .7;
+}
+#contact {
+    flex-direction: column;
+    height: 25vh;
+}
+
+.infos{
+    position: relative;
+}
+
+.infos p{
+    font-size: 1rem !important;
+}
+
+#contact p, #contact p > a{
+    font-size: .6rem;
+}
+
+.infos-contact {
+    font-size: 2rem;
+}
+
+.infos-contact .btn-close {
+    width: 50px !important;
+}
+
+.infos-contact input, textarea {
+    border: none !important;
+    background-color: #af95ff !important;
+}
+
+.btn-send-submit {
+    color: #fff !important;
+    background-color: #8358FF !important;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 75%;
+    }
+    .gallery {
+        max-height: 500px;
+    }
+    .infos::before {
+        content: '';
+        width: 2px;
+        height: 30px;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: 0;
+        transition: all .3s ease;
+    }
+    #contact {
+        flex-direction: row;
+    }
+
+    .infos:hover::before {
+        transform: translateX(150px);
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 100%;
+    }
+    .gallery .images {
+        column-count: 3;
+        column-gap: 0;
+        padding: var(--padding-section-mobile);
+    }
+    .gallery {
+        max-height: none;
+        overflow: hidden;
+    }
+    .infos::before {
+        content: '';
+        top: -5px;
+    }
+    .infos:hover::before {
+        transform: translateX(200px);
+    }
+    .why img {
+        width: 40%;
+    }
+    
+}
+@media (min-width: 1200px) {
+    html {
+        font-size: 125%;
+    }
+    .infos::before {
+        content: '';
+        top: 0;
+    }
+    .infos:hover::before {
+        transform: translateX(250px);
+    }
+    
+}

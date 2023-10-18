@@ -1,0 +1,221 @@
+
+.scroll-animation{
+    animation: scroll .8s ease-out;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateY(70px);
+        filter: blur(10);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes scaling {
+    0% {
+        transform: scale(.3);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+section{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+section > span{
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: #8358FF;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgb(131, 88, 255, 0.1), 0 0 0 8px rgb(131, 88, 255, 0.2), 0 0 20px rgb(131, 88, 255, 1)  ;
+    animation:  animate 3s linear infinite;
+}
+section > span::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, rgb(131, 88, 255, 1), transparent);
+}
+@keyframes animate {
+    0%
+    {
+        transform: rotate(315deg) translateX(0);
+        opacity: 1;
+    }
+    70%
+    {
+        opacity: 1;
+
+    }
+    100%
+    {
+        transform: rotate(315deg) translateX(-1200px);
+        opacity: 0;
+
+    }
+    
+}
+section > span:nth-child(1){
+    top: 0;
+    right: 0;
+    left:initial;
+    animation-delay:0 ;
+    animation-duration: 1s;
+}
+
+section > span:nth-child(2){
+    top: 0;
+    right: 80px;
+    left:initial;
+    animation-delay:0.2s;
+    animation-duration: 3s;
+}
+
+section > span:nth-child(3){
+    top: 80px;
+    right: 0px;
+    left:initial;
+    animation-delay:0.4s ;
+    animation-duration: 2s;
+}
+
+section > span:nth-child(4){
+    top: 0;
+    right: 180px;
+    left:initial;
+    animation-delay:0.6s;
+    animation-duration: 1.5s;
+}
+
+section > span:nth-child(5){
+    top: 0;
+    right: 400px;
+    left:initial;
+    animation-delay:0.8s;
+    animation-duration: 2.5s;
+}
+
+section > span:nth-child(6){
+    top: 0;
+    right: 600px;
+    left:initial;
+    animation-delay:1s ;
+    animation-duration: 3s;
+}
+section > span:nth-child(7 ){
+    top: 300px;
+    right: 0px;
+    left:initial;
+    animation-delay:1s ;
+    animation-duration: 1.75s;
+}
+
+section > span:nth-child(8){
+    top: 0px;
+    right: 700px;
+    left:initial;
+    animation-delay:1.4s ;
+    animation-duration: 1.25s;
+}
+
+section > span:nth-child(9){
+    top: 0px;
+    right: 1000px;
+    left:initial;
+    animation-delay:0.75s ;
+    animation-duration: 2.25s;
+}
+
+section > span:nth-child(10){
+    top: 0px;
+    right: 1000px;
+    left:initial;
+    animation-delay:2.75s ;
+    animation-duration: 2.25s;
+}
+
+.nav-item:has(:hover):before, .nav-item:has(:hover):after {
+    content: ' ';
+    width: 20px;
+    background-image: linear-gradient(to right, #8358FF, transparent);
+    height: 1px;
+    display: block;
+    position: absolute;
+    transition: all .3s ease;
+    animation: toLeft .3s ease;
+    border-radius: 1rem;
+}
+
+.nav-item:has(:hover):after {
+    right: 0;
+    transition: all .3s ease;
+    animation: toRight .3s ease;
+    background-image: linear-gradient(to left, #8358FF, transparent);
+}
+
+@keyframes toLeft {
+    from {
+        opacity: 0;
+        transform: translateX(500%);
+    }
+}
+
+@keyframes toRight {
+    from {
+        opacity: 0;
+        transform: translateX(-500%);
+    }
+}
+
+.img-nebula {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    animation: travel 30s infinite;
+}
+
+
+@keyframes travel {
+    25% {
+        transform: translate(-100vw, -50vh);
+        filter: drop-shadow(1px 3px 8px #8358FF);
+    }
+    50% {
+        transform: scale(.8);
+        transform: translate(0, -80vh);
+        filter: drop-shadow(1px 3px 8px rgb(131, 88, 255, 0.2));
+    }
+    75% {
+        transform: translate(-60vw, -100vh);
+        filter: drop-shadow(1px 3px 8px #8358FF);
+    }
+    95% {
+        filter: drop-shadow(1px 3px 8px rgb(131, 88, 255, 0.2));
+        transform: translate(-100vw, 0);
+    }
+}
+
+
+

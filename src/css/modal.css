@@ -1,0 +1,16 @@
+.overlay-img {
+    display: none;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 900;
+    height: 100%;
+    width: min(100%, 100vw);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.img-modal {
+    position: absolute;
+    z-index: 999;
+    width: 50%;
+    animation: scaling .5s ease;
+}
